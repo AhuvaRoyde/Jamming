@@ -34,17 +34,8 @@ const Spotify = {
                 }
             }
         );
-        console.log(response);
-        const jsonResponse = await response.json();
-        return jsonResponse.map(track => {
-            return {
-                id: track.id,
-                name: track.name,
-                artist: track.artists[0].name,
-                album: track.album.name,
-                uri: track.uri
-            };
-        });
+        const jsonResponse = response.json();
+        return jsonResponse;
     },
 
     async savePlaylist(playlistName, uris) {
